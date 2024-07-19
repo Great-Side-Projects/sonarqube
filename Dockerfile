@@ -12,3 +12,4 @@ EXPOSE 9000
 
 # Mount the volumes for data, extensions, and logs
 VOLUME ["/opt/sonarqube/data", "/opt/sonarqube/extensions", "/opt/sonarqube/logs"]
+
