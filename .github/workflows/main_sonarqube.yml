@@ -19,6 +19,11 @@ jobs:
         echo "${{ secrets.AZURE_VM_SSH_KEY }}" > azure_vm_ssh_key
         chmod 600 azure_vm_ssh_key
         ls -l azure_vm_ssh_key  # Check if the file is created and has the correct permissions
+      
+    - name: Prepare deployment directory
+      run: |
+        mkdir -p app
+        cp -r * app/
 
     - name: Deploy to Azure VM
       env:
@@ -29,7 +34,7 @@ jobs:
         SONAR_JDBC_USERNAME: ${{ secrets.SONAR_JDBC_USERNAME }}
         SONAR_JDBC_PASSWORD: ${{ secrets.SONAR_JDBC_PASSWORD }}
       run: |
-        scp -o StrictHostKeyChecking=no -i azure_vm_ssh_key -r . $AZURE_VM_USERNAME@$AZURE_VM_IP:~/app
+        scp -o StrictHostKeyChecking=no -i azure_vm_ssh_key -r app $AZURE_VM_USERNAME@$AZURE_VM_IP:~/app
         ssh -o StrictHostKeyChecking=no -i azure_vm_ssh_key $AZURE_VM_USERNAME@$AZURE_VM_IP << 'EOF'
           cd ~/app  
           docker build -t sonarqube:latest .
