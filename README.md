@@ -63,7 +63,7 @@
 
 [![Product Name Screen Shot][product-screenshot-UI]](http://20.64.115.37:9000/)
 
-How to deploy Sonarqube on an Azure VM or localhost with Docker. 
+How to deploy Sonarqube on an Azure VM or localhost with Docker. i am using Sonarqube to my side projects to improve the code quality and security of the code. 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -98,7 +98,7 @@ Here you can find the steps to run the project in your local environment to expl
 
 This is an example of how to list things you need to use the software and how to install them.
 
-You need to have a database created in PostgreSQL, for example "sonaqube" see https://docs.sonarsource.com/sonarqube/latest/setup-and-upgrade/install-the-server/installing-the-database/.
+You need to have a database created in PostgreSQL, for example "sonarqube" see https://docs.sonarsource.com/sonarqube/latest/setup-and-upgrade/install-the-server/installing-the-database/.
 #### Note: the first time you run the project, the database will be created automatically and take more time to start the Sonarqube server. 
 
 * Docker
