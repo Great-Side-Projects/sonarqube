@@ -92,7 +92,7 @@ The architecture design is based in Azure cloud services, the project is deploye
 <!-- GETTING STARTED -->
 ## Getting Started
 
-Here you can find the steps to run the project in your local environment to explore the Sonarqube proyect. 
+Here you can find the steps to run the project in your local environment to explore the Sonarqube proyect. i am using Sonarqube to my side projects to improve the code quality and security of the code. 
 
 ### Prerequisites
 
@@ -104,6 +104,7 @@ You need to have a database created in PostgreSQL, for example "sonaqube" see ht
 * Docker
 * PostgresSQL database
 * ***Sudo privileges in your local environment or VM (mandatory for docker installation)
+* if you are in a VM, you need to open the port 9000 a public access to the Sonarqube server. 
 
 ### Installation
 0. ***Increase the vm.max_map_count kernel setting to at least 262144. See https://www.elastic.co/guide/en/elasticsearch/reference/current/vm-max-map-count.html
