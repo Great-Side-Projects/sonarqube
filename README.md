@@ -8,7 +8,7 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://www.keycloak.org/">
+  <a href="https://www.sonarqube.org/">
     <img src="https://assets-eu-01.kc-usercontent.com:443/b1ac63b6-1e65-01f4-6f38-e97c0e9214a1/12e3974b-220d-4cde-8f17-2ff9fa9d9c27/SonarQube_Logo.svg" alt="Logo" width="400" height="">
   </a>
 
@@ -241,7 +241,6 @@ Project Link: [https://github.com/Great-Side-Projects/sonarqube](https://github.
 [linkedin-url]: https://www.linkedin.com/in/angelmoralesb/
 [product-screenshot-UI]: images/screenshotUI.png
 [DockerImage]: https://img.shields.io/badge/Docker-0db7ed?style=for-the-badge&logo=docker&logoColor=white
-logo=microsoft-azure&logoColor=white
 [PostgreSQL]: https://img.shields.io/badge/PostgreSQL-336791?style=for-the-badge&logo=postgresql&logoColor=white
 [architecture-diagram]: images/Sonarqube-Architecture-Design.drawio.png
 [AzureVM]: https://img.shields.io/badge/Azure%20VM-0089D6?style=for-the-badge&logo=microsoft-azure&logoColor=white
