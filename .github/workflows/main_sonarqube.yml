@@ -16,7 +16,9 @@ jobs:
 
     - name: Set up SSH key
       run: |
-        echo "${{ secrets.AZURE_VM_SSH_KEY }}" > azure_vm_ssh_key
+        mkdir -p /app
+        echo "${{ secrets.AZURE_VM_SSH_KEY }}" > /app/azure_vm_ssh_key
+        cd /app
         chmod 600 azure_vm_ssh_key
         ls -l azure_vm_ssh_key  # Check if the file is created and has the correct permissions
       
@@ -29,9 +31,9 @@ jobs:
         SONAR_JDBC_USERNAME: ${{ secrets.SONAR_JDBC_USERNAME }}
         SONAR_JDBC_PASSWORD: ${{ secrets.SONAR_JDBC_PASSWORD }}
       run: |
-        scp -o StrictHostKeyChecking=no -i azure_vm_ssh_key -r ./ $AZURE_VM_USERNAME@$AZURE_VM_IP:/home/azureuser/
+        scp -o StrictHostKeyChecking=no -i azure_vm_ssh_key -r /app $AZURE_VM_USERNAME@$AZURE_VM_IP:/home/azureuser
         ssh -o StrictHostKeyChecking=no -i azure_vm_ssh_key $AZURE_VM_USERNAME@$AZURE_VM_IP << 'EOF'
-          cd /home/azureuser/
+          cd /home/azureuser
           docker build -t sonarqube:latest .
           docker stop sonarqube || true
           docker rm sonarqube || true
