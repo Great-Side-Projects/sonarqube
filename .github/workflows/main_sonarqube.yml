@@ -29,9 +29,9 @@ jobs:
         SONAR_JDBC_USERNAME: ${{ secrets.SONAR_JDBC_USERNAME }}
         SONAR_JDBC_PASSWORD: ${{ secrets.SONAR_JDBC_PASSWORD }}
       run: |
-        scp -o StrictHostKeyChecking=no -i azure_vm_ssh_key -r azure_vm_ssh_key Dockerfilesonarqube $AZURE_VM_USERNAME@$AZURE_VM_IP:/home/azureuser
+        scp -o StrictHostKeyChecking=no -i azure_vm_ssh_key -r Dockerfilesonarqube $AZURE_VM_USERNAME@$AZURE_VM_IP:
         ssh -o StrictHostKeyChecking=no -i azure_vm_ssh_key $AZURE_VM_USERNAME@$AZURE_VM_IP << 'EOF'
-          cd /home/azureuser
+          
           docker build -t sonarqube:latest -f Dockerfilesonarqube .
           docker stop sonarqube || true
           docker rm sonarqube || true
