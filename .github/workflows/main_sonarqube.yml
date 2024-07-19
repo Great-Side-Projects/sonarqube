@@ -16,7 +16,7 @@ jobs:
 
     - name: Set up SSH key
       run: |
-        mkdir -p /app
+        sudo mkdir -p /app
         echo "${{ secrets.AZURE_VM_SSH_KEY }}" > /app/azure_vm_ssh_key
         cd /app
         chmod 600 azure_vm_ssh_key
